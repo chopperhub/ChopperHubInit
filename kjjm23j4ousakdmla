@@ -1,13 +1,20 @@
-local url = syn.request({
-    Url = "https://chopperhub.kamicozii.repl.co/?key="..getgenv().key,
-    Method = "GET"
-})
+if getgenv().key == nil or getgenv().key == "" or getgenv().key == " " then
 
-
-if string.find(url.Body, getgenv().key) then
-    print(getgenv().key)
-  else
-    game:GetService('Players').LocalPlayer:Kick('Invalid Key')
-elseif not getgenv().key then
-    print("key is missing")
+    game:GetService('Players').LocalPlayer:Kick('Chopper Hub: Missing Key (Make sure to copy the whole script)')
+      
+      else
+          
+      local url = syn.request({
+          Url = "https://chopperhub.kamicozii.repl.co/?key="..getgenv().key,
+          Method = "GET"
+      })
+  
+  
+      if string.find(url.Body, getgenv().key) then
+          print(getgenv().key)
+      else
+          game:GetService('Players').LocalPlayer:Kick('Chopper Hub: Invalid Key')
+          
+      end
+  
 end
