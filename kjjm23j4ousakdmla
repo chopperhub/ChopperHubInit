@@ -6,6 +6,8 @@ local url = syn.request({
 
 if string.find(url.Body, getgenv().key) then
     print(getgenv().key)
-else
-    print("INVALID")
+  else
+    game:GetService('Players').LocalPlayer:Kick('Invalid Key')
+elseif not getgenv().key then
+    print("key is missing")
 end
