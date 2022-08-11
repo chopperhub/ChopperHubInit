@@ -1,5 +1,5 @@
 print("123")
-
+print(getgenv().key)
 
 rayKey, rayKey2 = "123", "12345$" -- Must be same as the one in the env file
 SecretNum = 123456 -- Must be same as the one in the env file
