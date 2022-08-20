@@ -98,9 +98,9 @@ function library:CreateWindow(title)
         TextButton.MouseButton1Down:connect(function()
             for i2,v2 in pairs(SectionsTab:GetChildren()) do
                 if v2:IsA("TextButton") then
-                    v2.S.Visible = false
+                    game.GetService("TweenService"):Create(v2, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(155,155,155) } ):Play()
                     Sections:FindFirstChild(v2.Name).Visible = false
-                    v.S.Visible = true
+                    game.GetService("TweenService"):Create(v2, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(250,250,250) } ):Play()
                     Sections:FindFirstChild(v.Name).Visible = true
                 end
             end
