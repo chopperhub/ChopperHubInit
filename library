@@ -71,7 +71,9 @@ function library:CreateWindow(title)
 
     local sLibrary = {}
 
-    function sLibrary:CreateButton(text)
+    function sLibrary:CreateButton(text, callback)
+        local callback = callback or function() end
+
         local TextButton = Instance.new("TextButton")
 
         TextButton.Parent = SectionsTab
@@ -85,6 +87,10 @@ function library:CreateWindow(title)
         TextButton.TextColor3 = Color3.fromRGB(229, 229, 229)
         TextButton.TextSize = 17.000
         TextButton.TextWrapped = true
+
+        TextButton.MouseButton1Down:connect(function()
+            pcall(callback)
+        end)
     end
 
     return sLibrary
