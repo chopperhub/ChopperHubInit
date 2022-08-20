@@ -111,6 +111,7 @@ function library:CreateWindow(title)
         TextButton.MouseButton1Down:connect(function()
             for i2,v2 in next, SectionsTab:GetChildren() do
                 if v2:IsA("TextButton") then
+                    print(v2.Name)
                     game:GetService("TweenService"):Create(v2, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(155,155,155) } ):Play()
                     Sections:FindFirstChild(v2.Name).Visible = false
                     game:GetService("TweenService"):Create(TextButton, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(250,250,250) } ):Play()
@@ -175,7 +176,11 @@ function library:CreateWindow(title)
                 Toggle_2.BackgroundColor3 = value and Color3.fromRGB(54, 53, 81) or Color3.fromRGB(86, 85, 130)
                 pcall(callback, value)
             end
+
+
         end
+
+        return SectionStuff
 
     end
 
