@@ -71,10 +71,10 @@ function library:CreateWindow(title)
 
     local sLibrary = {}
 
-    function sLibrary:CreateButton(text, callback)
-        local callback = callback or function() end
+    function sLibrary:CreateSection(text)
 
         local TextButton = Instance.new("TextButton")
+        local Sections = Instance.new("Frame")
 
         TextButton.Parent = SectionsTab
         TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -88,8 +88,22 @@ function library:CreateWindow(title)
         TextButton.TextSize = 17.000
         TextButton.TextWrapped = true
 
+        Sections.Name = text
+        Sections.Parent = Main
+        Sections.BackgroundColor3 = Color3.fromRGB(34, 33, 50)
+        Sections.BorderSizePixel = 0
+        Sections.Position = UDim2.new(0.230000004, 0, 0.0590000004, 0)
+        Sections.Size = UDim2.new(0.541000009, 136, 0.921999991, 0)
+
         TextButton.MouseButton1Down:connect(function()
-            pcall(callback)
+            for i2,v2 in pairs(SectionsTab:GetChildren()) do
+                if v2:IsA("TextButton") then
+                    v2.S.Visible = false
+                    Sections:FindFirstChild(v2.Name).Visible = false
+                    v.S.Visible = true
+                    Sections:FindFirstChild(v.Name).Visible = true
+                end
+            end
         end)
     end
 
