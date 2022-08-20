@@ -1,0 +1,93 @@
+local library = {}
+
+function library:CreateWindow()
+    local Design = Instance.new("ScreenGui")
+    local Main = Instance.new("Frame")
+    local SectionsTab = Instance.new("Frame")
+    local UIGridLayout = Instance.new("UIGridLayout")
+    local UIPadding = Instance.new("UIPadding")
+    local Sections = Instance.new("Frame")
+    local Title = Instance.new("TextLabel")
+    local Exit = Instance.new("TextButton")
+    
+    Design.Name = "Design"
+    Design.Parent = game:GetService("CoreGui")
+
+    Main.Name = "Main"
+    Main.Parent = Design
+    Main.BackgroundColor3 = Color3.fromRGB(54, 53, 81)
+    Main.BorderSizePixel = 0
+    Main.Position = UDim2.new(0.38754952, 0, 0.228434741, 0)
+    Main.Size = UDim2.new(0, 620, 0, 320)
+
+    SectionsTab.Name = "SectionsTab"
+    SectionsTab.Parent = Main
+    SectionsTab.BackgroundColor3 = Color3.fromRGB(34, 33, 50)
+    SectionsTab.BorderSizePixel = 0
+    SectionsTab.Position = UDim2.new(0.00967741944, 0, 0.0593750477, 0)
+    SectionsTab.Size = UDim2.new(-0.00741936453, 136, 0.922000051, 0)
+    SectionsTab.ZIndex = 1
+    UIGridLayout.Parent = SectionsTab
+    UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout.CellSize = UDim2.new(0, 129, 0, 31)
+
+    UIPadding.Parent = SectionsTab
+    UIPadding.PaddingTop = UDim.new(0, 20)
+
+    Sections.Name = "Sections"
+    Sections.Parent = Main
+    Sections.BackgroundColor3 = Color3.fromRGB(34, 33, 50)
+    Sections.BorderSizePixel = 0
+    Sections.Position = UDim2.new(0.230000004, 0, 0.0590000004, 0)
+    Sections.Size = UDim2.new(0.541000009, 136, 0.921999991, 0)
+
+    Title.Name = "Title"
+    Title.Parent = Main
+    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Title.BackgroundTransparency = 1.000
+    Title.Position = UDim2.new(0.00967741944, 0, 0, 0)
+    Title.Size = UDim2.new(0, 200, 0, 19)
+    Title.ZIndex = 1
+    Title.Font = Enum.Font.GothamBlack
+    Title.Text = "Chopper Hub"
+    Title.TextColor3 = Color3.fromRGB(220, 220, 220)
+    Title.TextSize = 14.000
+    Title.TextXAlignment = Enum.TextXAlignment.Left
+
+    Exit.Name = "Exit"
+    Exit.Parent = Main
+    Exit.BackgroundColor3 = Color3.fromRGB(255, 102, 75)
+    Exit.BorderSizePixel = 0
+    Exit.Position = UDim2.new(0.979032218, 0, 0.0125000002, 0)
+    Exit.Size = UDim2.new(0, 10, 0, 10)
+    Exit.ZIndex = 1
+    Exit.Font = Enum.Font.SourceSans
+    Exit.Text = ""
+    Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Exit.TextSize = 14.000
+
+    local sLibrary = {}
+
+    function sLibrary:CreateButton(text)
+        local TextButton = Instance.new("TextButton")
+
+        TextButton.Name = text
+        TextButton.Parent = SectionsTab
+        TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        TextButton.BackgroundTransparency = 1.000
+        TextButton.Position = UDim2.new(0, 0, 0.108984336, 0)
+        TextButton.Size = UDim2.new(0, 129, 0, 31)
+        TextButton.ZIndex = 2
+        TextButton.Font = Enum.Font.GothamBold
+        TextButton.Text = "Dungeon"
+        TextButton.TextColor3 = Color3.fromRGB(229, 229, 229)
+        TextButton.TextSize = 17.000
+        TextButton.TextWrapped = true
+    end
+
+    return sLibrary
+
+end
+
+return library
+
