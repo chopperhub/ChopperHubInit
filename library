@@ -71,7 +71,6 @@ function library:CreateWindow(title)
     function sLibrary:CreateButton(text)
         local TextButton = Instance.new("TextButton")
 
-        TextButton.Name = text
         TextButton.Parent = SectionsTab
         TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         TextButton.BackgroundTransparency = 1.000
@@ -79,7 +78,7 @@ function library:CreateWindow(title)
         TextButton.Size = UDim2.new(0, 129, 0, 31)
         TextButton.ZIndex = 2
         TextButton.Font = Enum.Font.GothamBold
-        TextButton.Text = "Dungeon"
+        TextButton.Text = text
         TextButton.TextColor3 = Color3.fromRGB(229, 229, 229)
         TextButton.TextSize = 17.000
         TextButton.TextWrapped = true
