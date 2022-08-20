@@ -91,23 +91,23 @@ function library:CreateWindow(title)
         TextButton.TextSize = 17.000
         TextButton.TextWrapped = true
 
-        Sections.Name = text
-        Sections.Parent = Main
-        Sections.BackgroundColor3 = Color3.fromRGB(34, 33, 50)
-        Sections.BorderSizePixel = 0
-        Sections.Position = UDim2.new(0.230000004, 0, 0.0590000004, 0)
-        Sections.Size = UDim2.new(0.541000009, 136, 0.921999991, 0)
+        Section.Name = text
+        Section.Parent = Main
+        Section.BackgroundColor3 = Color3.fromRGB(34, 33, 50)
+        Section.BorderSizePixel = 0
+        Section.Position = UDim2.new(0.230000004, 0, 0.0590000004, 0)
+        Section.Size = UDim2.new(0.541000009, 136, 0.921999991, 0)
 
         TextButton.MouseButton1Down:connect(function()
             for i2,v2 in next, SectionsTab:GetChildren() do
                 if v2:IsA("TextButton") then
                     game:GetService("TweenService"):Create(v2, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(155,155,155) } ):Play()
-                    v2.Visible = false
+                    Sections:FindFirstChild(v2.Name).Visible = false
                     game:GetService("TweenService"):Create(TextButton, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(250,250,250) } ):Play()
-                    TextButton.Visible = true
+                    
                 end
             end
-            Sections.Visible = true
+            Section.Visible = true
         end)
     end
 
