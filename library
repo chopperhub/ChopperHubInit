@@ -21,6 +21,7 @@ function library:CreateWindow(title)
     Main.Size = UDim2.new(0, 620, 0, 320)
     Main.Draggable = true
     Main.Selectable = true
+    Main.Active = true
 
     SectionsTab.Name = "SectionsTab"
     SectionsTab.Parent = Main
