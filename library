@@ -68,6 +68,9 @@ function library:CreateWindow(title)
     Exit.Text = ""
     Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
     Exit.TextSize = 14.000
+    Exit.MouseButton1Click:connect(function()
+        Design:Destroy()
+    end)
 
     local sLibrary = {}
 
