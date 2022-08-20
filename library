@@ -77,7 +77,17 @@ function library:CreateWindow(title)
     function sLibrary:CreateSection(text)
 
         local TextButton = Instance.new("TextButton")
-        local Sections = Instance.new("Frame")
+        local Section = Instance.new("Frame")
+        local UIGridLayout_2 = Instance.new("UIGridLayout")
+        local UIPadding_2 = Instance.new("UIPadding")
+
+        UIGridLayout_2.Parent = Section
+        UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+        UIGridLayout_2.CellSize = UDim2.new(0, 455, 0, 38)
+
+        UIPadding_2.Parent = Section
+        UIPadding_2.PaddingLeft = UDim.new(0, 7)
+        UIPadding_2.PaddingTop = UDim.new(0, 35)
 
         TextButton.Parent = SectionsTab
         TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -109,6 +119,64 @@ function library:CreateWindow(title)
             end
             Section.Visible = true
         end)
+
+
+
+
+        local SectionStuff = {}
+
+        function SectionStuff:CreateToggle(text, callback)
+            local actions = {}
+            local value = false
+
+            text = text or "New Toggle"
+            callback = callback or function() end
+
+            local Toggle = Instance.new("Frame")
+            local Toggle_2 = Instance.new("TextButton")
+            local Title_2 = Instance.new("TextLabel")
+
+            Toggle.Name = text
+            Toggle.Parent = Sections
+            Toggle.BackgroundColor3 = Color3.fromRGB(54, 53, 81)
+            Toggle.BorderSizePixel = 0
+            Toggle.Position = UDim2.new(0.021212507, 0, 0.122017272, 0)
+            Toggle.Size = UDim2.new(0, 455, 0, 38)
+            Toggle.ZIndex = 8
+
+            Toggle_2.Name = "Toggle"
+            Toggle_2.Parent = Toggle
+            Toggle_2.BackgroundColor3 = Color3.fromRGB(54, 53, 81)
+            Toggle_2.BorderColor3 = Color3.fromRGB(34, 33, 50)
+            Toggle_2.BorderSizePixel = 2
+            Toggle_2.Position = UDim2.new(0.938461542, 0, 0.272495747, 0)
+            Toggle_2.Size = UDim2.new(0, 20, 0, 20)
+            Toggle_2.ZIndex = 8
+            Toggle_2.Font = Enum.Font.SourceSans
+            Toggle_2.Text = ""
+            Toggle_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Toggle_2.TextSize = 14.000
+
+            Title_2.Name = "Title"
+            Title_2.Parent = Toggle
+            Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Title_2.BackgroundTransparency = 1.000
+            Title_2.Position = UDim2.new(0.0241758246, 0, 0, 0)
+            Title_2.Size = UDim2.new(0, 200, 1, 0)
+            Title_2.ZIndex = 10
+            Title_2.Font = Enum.Font.GothamBlack
+            Title_2.Text = text
+            Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Title_2.TextSize = 14.000
+            Title_2.TextXAlignment = Enum.TextXAlignment.Left
+
+            local function Toggle()
+                value = not value
+                Toggle_2.BackgroundColor3 = value and Color3.fromRGB(54, 53, 81) or Color3.fromRGB(86, 85, 130)
+                pcall(callback, value)
+            end
+        end
+
     end
 
     return sLibrary
