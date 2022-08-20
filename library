@@ -1,6 +1,6 @@
 local library = {}
 
-function library:CreateWindow()
+function library:CreateWindow(title)
     local Design = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
     local SectionsTab = Instance.new("Frame")
@@ -41,7 +41,7 @@ function library:CreateWindow()
     Sections.Position = UDim2.new(0.230000004, 0, 0.0590000004, 0)
     Sections.Size = UDim2.new(0.541000009, 136, 0.921999991, 0)
 
-    Title.Name = "Title"
+    Title.Name = title
     Title.Parent = Main
     Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Title.BackgroundTransparency = 1.000
