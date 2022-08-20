@@ -44,7 +44,7 @@ function library:CreateWindow(title)
     Sections.Position = UDim2.new(0.230000004, 0, 0.0590000004, 0)
     Sections.Size = UDim2.new(0.541000009, 136, 0.921999991, 0)
 
-    Title.Name = title
+    Title.Name = "Title"
     Title.Parent = Main
     Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Title.BackgroundTransparency = 1.000
@@ -52,7 +52,7 @@ function library:CreateWindow(title)
     Title.Size = UDim2.new(0, 200, 0, 19)
     Title.ZIndex = 1
     Title.Font = Enum.Font.GothamBlack
-    Title.Text = "Chopper Hub"
+    Title.Text = title
     Title.TextColor3 = Color3.fromRGB(220, 220, 220)
     Title.TextSize = 14.000
     Title.TextXAlignment = Enum.TextXAlignment.Left
