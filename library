@@ -103,7 +103,8 @@ function library:CreateWindow(title)
                 if v2:IsA("TextButton") then
                     game:GetService("TweenService"):Create(v2, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(155,155,155) } ):Play()
                     v2.Visible = false
-                    game:GetService("TweenService"):Create(v2, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(250,250,250) } ):Play()
+                    game:GetService("TweenService"):Create(TextButton, TweenInfo.new(.2), {TextColor3 = Color3.fromRGB(250,250,250) } ):Play()
+                    TextButton.Visible = true
                 end
             end
             Sections.Visible = true
